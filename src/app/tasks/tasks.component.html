@@ -2,9 +2,13 @@
   <header>
     <h2>{{ user()?.name }}'s Task</h2>
     <menu>
-      <button>Add Task</button>
+      <button (click)="onAddNewTask()">Add Task</button>
     </menu>
   </header>
+
+  @if (isAddingTask()) {
+  <app-add-task (cancel)="onCancelTask()" (submit)="onSubmitTask()" />
+  }
 
   <ul>
     @for (task of userTasks(); track task.id) {
