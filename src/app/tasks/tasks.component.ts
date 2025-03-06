@@ -43,7 +43,16 @@ export class TasksComponent {
     this.isAddingTask.set(false);
   }
 
-  onSubmitTask() {
+  onSubmitTask(task: Task) {
+    const tasks = this.userTasks();
+    tasks.unshift({
+      title: task.title,
+      summary: task.summary,
+      dueDate: task.dueDate,
+      userId: this.user()?.id,
+      id: new Date().toDateString(),
+    });
+    this.userTasks.set(tasks);
     this.isAddingTask.set(false);
   }
 }
