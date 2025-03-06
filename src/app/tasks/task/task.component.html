@@ -1,1 +1,8 @@
-<p>task works!</p>
+<article>
+  <h2>{{ task()?.title }}</h2>
+  <time>{{ task()?.dueDate }}</time>
+  <p>{{ task()?.summary }}</p>
+  <p class="actions">
+    <button>Complete</button>
+  </p>
+</article>
