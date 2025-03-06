@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, signal, input, effect } from '@angular/core';
 
 import { TaskComponent } from './task/task.component';
 import { User } from '../user/user.model';
@@ -16,7 +16,19 @@ export class TasksComponent {
   // name = input<string>();
   user = input<User | null>(null);
 
-  userTasks = computed<Task[]>(() =>
-    DUMMY_TASKS.filter((r) => r.userId === this.user()?.id)
-  );
+  // Use a writable signal
+  userTasks = signal<Task[]>([]);
+
+  constructor() {
+    // Auto-update `userTasks` whenever `user` changes
+    effect(() => {
+      this.userTasks.set(
+        DUMMY_TASKS.filter((r) => r.userId === this.user()?.id)
+      );
+    });
+  }
+
+  onTaskComplete(taskId: string | undefined) {
+    this.userTasks.set(this.userTasks().filter((r: Task) => r.id !== taskId));
+  }
 }
