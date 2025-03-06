@@ -4,6 +4,7 @@ import { TaskComponent } from './task/task.component';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { User } from '../user/user.model';
 import { Task } from './task/task.model';
+import { TasksService } from './tasks.service';
 
 import { DUMMY_TASKS } from '../dummy-tasks';
 
@@ -22,37 +23,17 @@ export class TasksComponent {
   // Use a writable signal
   userTasks = signal<Task[]>([]);
 
-  constructor() {
-    // Auto-update `userTasks` whenever `user` changes
+  constructor(private taskService: TasksService) {
     effect(() => {
-      this.userTasks.set(
-        DUMMY_TASKS.filter((r) => r.userId === this.user()?.id)
-      );
+      this.userTasks.set(this.taskService.getUserTasks(this.user()?.id));
     });
   }
 
-  onTaskComplete(taskId: string | undefined) {
-    this.userTasks.set(this.userTasks().filter((r: Task) => r.id !== taskId));
-  }
-
-  onAddNewTask() {
+  onOpenNewTaskDialog() {
     this.isAddingTask.set(true);
   }
 
-  onCancelTask() {
-    this.isAddingTask.set(false);
-  }
-
-  onSubmitTask(task: Task) {
-    const tasks = this.userTasks();
-    tasks.unshift({
-      title: task.title,
-      summary: task.summary,
-      dueDate: task.dueDate,
-      userId: this.user()?.id,
-      id: new Date().toDateString(),
-    });
-    this.userTasks.set(tasks);
+  onCloseTask() {
     this.isAddingTask.set(false);
   }
 }

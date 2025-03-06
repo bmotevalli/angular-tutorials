@@ -2,18 +2,18 @@
   <header>
     <h2>{{ user()?.name }}'s Task</h2>
     <menu>
-      <button (click)="onAddNewTask()">Add Task</button>
+      <button (click)="onOpenNewTaskDialog()">Add Task</button>
     </menu>
   </header>
 
   @if (isAddingTask()) {
-  <app-add-task (cancel)="onCancelTask()" (add)="onSubmitTask($event)" />
+  <app-add-task (close)="onCloseTask()" [userId]="user()?.id" />
   }
 
   <ul>
     @for (task of userTasks(); track task.id) {
     <li>
-      <app-task [task]="task" (complete)="onTaskComplete($event)" />
+      <app-task [task]="task" />
     </li>
     }
   </ul>
