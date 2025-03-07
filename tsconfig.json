@@ -23,7 +23,16 @@
       "@tasks-components/*": ["projects/task-manager/src/app/components/*"],
       "@tasks-shared/*": ["projects/task-manager/src/app/shared/*"],
       "@tasks-services/*": ["projects/task-manager/src/app/services/*"],
-      "@tasks-assets/*": ["projects/task-manager/src/assets/*"]
+      "@tasks-assets/*": ["projects/task-manager/src/assets/*"],
+      "@invest-models/*": ["projects/investment-calculator/src/app/models/*"],
+      "@invest-components/*": [
+        "projects/investment-calculator/src/app/components/*"
+      ],
+      "@invest-shared/*": ["projects/investment-calculator/src/app/shared/*"],
+      "@invest-services/*": [
+        "projects/investment-calculator/src/app/services/*"
+      ],
+      "@invest-assets/*": ["projects/investment-calculator/src/assets/*"]
     }
   },
   "angularCompilerOptions": {

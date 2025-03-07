@@ -2,6 +2,8 @@
 
 This repository supports multiple independent **Angular Projects**. The projects are simple tutorial projects.
 
+## Set up multi angular projects
+
 To set up multi-project structure, follow the following steps:
 
 - ng new angular-tutorials --create-application=false
@@ -12,6 +14,10 @@ To set up multi-project structure, follow the following steps:
 
 - ng serve project1
 - ng serve project2
+
+## Create new components for a project
+
+ng g c my-new-component --project=project1
 
 # Projects
 
