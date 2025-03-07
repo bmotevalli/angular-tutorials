@@ -12,3 +12,9 @@ To set up multi-project structure, follow the following steps:
 
 - ng serve project1
 - ng serve project2
+
+# Projects
+
+## Simple Task Manager
+
+## Investment Calculator
