@@ -3,29 +3,32 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "first-angular-app": {
+    "task-manager": {
       "projectType": "application",
       "schematics": {},
-      "root": "",
-      "sourceRoot": "src",
+      "root": "projects/task-manager",
+      "sourceRoot": "projects/task-manager/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/first-angular-app",
-            "index": "src/index.html",
-            "browser": "src/main.ts",
-            "polyfills": ["zone.js"],
-            "tsConfig": "tsconfig.app.json",
+            "outputPath": "dist/task-manager",
+            "index": "projects/task-manager/src/index.html",
+            "browser": "projects/task-manager/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/task-manager/tsconfig.app.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
-              },
-              "src/assets"
+                "input": "projects/task-manager/public"
+              }
             ],
-            "styles": ["src/styles.css"],
+            "styles": [
+              "projects/task-manager/src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -56,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "first-angular-app:build:production"
+              "buildTarget": "task-manager:build:production"
             },
             "development": {
-              "buildTarget": "first-angular-app:build:development"
+              "buildTarget": "task-manager:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -70,15 +73,20 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": ["zone.js", "zone.js/testing"],
-            "tsConfig": "tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/task-manager/tsconfig.spec.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "projects/task-manager/public"
               }
             ],
-            "styles": ["src/styles.css"],
+            "styles": [
+              "projects/task-manager/src/styles.css"
+            ],
             "scripts": []
           }
         }
