@@ -32,7 +32,14 @@
       "@invest-services/*": [
         "projects/investment-calculator/src/app/services/*"
       ],
-      "@invest-assets/*": ["projects/investment-calculator/src/assets/*"]
+      "@invest-assets/*": ["projects/investment-calculator/src/assets/*"],
+      "@dash-tr-models/*": ["projects/dashboard-traffic/src/app/models/*"],
+      "@dash-tr-components/*": [
+        "projects/dashboard-traffic/src/app/components/*"
+      ],
+      "@dash-tr-shared/*": ["projects/dashboard-traffic/src/app/shared/*"],
+      "@dash-tr-services/*": ["projects/dashboard-traffic/src/app/services/*"],
+      "@dash-tr-assets/*": ["projects/dashboard-traffic/src/assets/*"]
     }
   },
   "angularCompilerOptions": {
