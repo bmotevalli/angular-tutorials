@@ -16,7 +16,15 @@
     "moduleResolution": "bundler",
     "importHelpers": true,
     "target": "ES2022",
-    "module": "ES2022"
+    "module": "ES2022",
+    "baseUrl": "./",
+    "paths": {
+      "@tasks-models/*": ["projects/task-manager/src/app/models/*"],
+      "@tasks-components/*": ["projects/task-manager/src/app/components/*"],
+      "@tasks-shared/*": ["projects/task-manager/src/app/shared/*"],
+      "@tasks-services/*": ["projects/task-manager/src/app/services/*"],
+      "@tasks-assets/*": ["projects/task-manager/src/assets/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
