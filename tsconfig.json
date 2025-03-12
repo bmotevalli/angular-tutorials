@@ -39,7 +39,13 @@
       ],
       "@dash-tr-shared/*": ["projects/dashboard-traffic/src/app/shared/*"],
       "@dash-tr-services/*": ["projects/dashboard-traffic/src/app/services/*"],
-      "@dash-tr-assets/*": ["projects/dashboard-traffic/src/assets/*"]
+      "@dash-tr-assets/*": ["projects/dashboard-traffic/src/assets/*"],
+
+      "@place-pk-models/*": ["projects/place-picker/src/app/models/*"],
+      "@place-pk-components/*": ["projects/place-picker/src/app/components/*"],
+      "@place-pk-shared/*": ["projects/place-picker/src/app/shared/*"],
+      "@place-pk-services/*": ["projects/place-picker/src/app/services/*"],
+      "@place-pk-assets/*": ["projects/place-picker/src/assets/*"]
     }
   },
   "angularCompilerOptions": {
